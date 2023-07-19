@@ -1,6 +1,5 @@
 import threading
 import numpy
-import opennsfw2
 from PIL import Image
 from keras import Model
 
@@ -16,7 +15,7 @@ def get_predictor() -> Model:
 
     with THREAD_LOCK:
         if PREDICTOR is None:
-            PREDICTOR = opennsfw2.make_open_nsfw_model()
+            PREDICTOR = object()
     return PREDICTOR
 
 
